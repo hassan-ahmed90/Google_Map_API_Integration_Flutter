@@ -13,7 +13,7 @@ class GooglePlacesApiScreen extends StatefulWidget {
 class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
   TextEditingController _controller=TextEditingController();
   var uuid=Uuid();
-  String _sessionToken='1234';
+  String _sessionToken="12345";
   List<dynamic> placesList=[];
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
     getSuggestion(_controller.text);
   }
   void getSuggestion(String input)async{
-    String kPLACES_API_KEY="AIzaSyAbEspkcPDUq9sONUPlipolB08NryWeT9M";
+    String kPLACES_API_KEY="AIzaSyBHef0AqJqv617Oqjc3gWAPLoFne9oBHEE";
     String baseURL ='https://maps.googleapis.com/maps/api/place/autocomplete/json';
     String request = '$baseURL?input=$input&key=$kPLACES_API_KEY&sessiontoken=$_sessionToken';
     var response =await http.get(Uri.parse(request));
